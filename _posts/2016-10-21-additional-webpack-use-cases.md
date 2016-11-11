@@ -7,6 +7,8 @@ title: Additional Webpack Use Cases
 
 If you've nto yet used Webpack for all your CSS (https://webpack.github.io/docs/stylesheets.html). Then maybe there are ways you can bring post processing into your build step without too much effort. For example finding vendor prefixes for all your css can be achieved using (https://github.com/postcss/postcss-loader), but it's not the easiest thing in the world to configure. Why not use the Web Shell plugin on build step to run the annotate after when your javascript application builds?
 
+~~~
+
 var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
 var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
@@ -31,5 +33,7 @@ module.exports = {
         new WebpackShellPlugin({onBuildStart:['postcss --use autoprefixer stylesheets/css/styles.css -d stylesheets/css/'], onBuildEnd:['echo "Webpack End"']})
     ]
 };
+
+~~~
 
 ALso note here that we are running a ng annotate, which is important when webpack mangles the javascript in production as the angular dependencies assume undeterminable identifiers. See more here https://www.npmjs.com/package/ng-annotate.
