@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Additional Webpack Use Cases
 ---
 ##Using Webpack for CSS
