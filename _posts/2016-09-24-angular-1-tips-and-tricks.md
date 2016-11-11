@@ -57,7 +57,7 @@ However a correct way to test if arrays are equal is to use:
 expect(transformed.data).toEqual(['one', 'two', 'three']);
 ~~~
 
-Also you may have programmed your application to protect it from being reverse engineered or being scraped. If these measures occur before the build step then it's a good idea to disable them when unit testing. An example is this vanilla JS command I use to change the location so that a page cannot be loaded into an IFrame. This will prevent PhtantomJS from working as expected and needs to be disabled for testing:
+Lastly, you may have programmed your application to protect it from being reverse engineered be rewriting console, obfuscated source or any security restrictions. If any of these measures occur before the build step then it's a good idea to disable them when unit testing. An example is this vanilla JS command I use to change the location so that a page cannot be loaded into an IFrame. This will prevent PhtantomJS from working as expected and needs to be disabled for testing:
 
 ~~~
 if (window !== top) top.location = window.location
