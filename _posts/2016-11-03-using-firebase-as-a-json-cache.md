@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: Using Firebase as a JSON Cache
 ---
 ## Using A JSON Cache service
