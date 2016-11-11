@@ -43,17 +43,17 @@ $request = Request::create('/api/v2/sessiondata', 'GET');
     
 ~~~
 
-    return $http.jsonp('https://herokuapp174.firebaseio.com/data.json?callback=JSON_CALLBACK')
-                    .success(function(response){
+return $http.jsonp('https://herokuapp174.firebaseio.com/data.json?callback=JSON_CALLBACK')
+.success(function(response){
 
-                        var responseString = JSON.stringify(response);
-                        var message = CryptoJS.AES.decrypt(responseString, '~' + appToken, {format: CryptoJSAesJson}).toString(CryptoJS.enc.Utf8);
-                        var data = JSON.parse(message);
+  var responseString = JSON.stringify(response);
+  var message = CryptoJS.AES.decrypt(responseString, '~' + appToken, {format: CryptoJSAesJson}).toString(CryptoJS.enc.Utf8);
+  var data = JSON.parse(message);
 
-                        data = FestivalTransformer.transformArray(festivals);
+  data = FestivalTransformer.transformArray(festivals);
 
-                        callback(data);
+  callback(data);
 
-                    });
-                    
+});
+
 ~~~
