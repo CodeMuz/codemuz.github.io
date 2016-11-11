@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: Angular 1 - Tips and Tricks
+title: Angular - Tips and Tricks
 ---
 ## 1. Pre-Fetch Users Data into Angular HTTP cache
 
